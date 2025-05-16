@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kuroo Si Kucing</title>
+  
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #ffd6ec, #ffe4b5, #e0ffff);
+      color: #444;
+      text-align: center;
+      overflow-x: hidden;
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8em;
+      margin-top: 40px;
+      color: #d81e5b;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      animation: fadeIn 2s ease-in-out forwards;
+      text-shadow: 1px 1px 3px rgba(216, 30, 91, 0.6);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .Kuroo-img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 6px dotted #ff69b4;
+      margin: 30px auto;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+      animation: float 3s ease-in-out infinite;
+      background-color: white;
+      object-fit: cover;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.9);
+      border: 3px dashed #ff69b4;
+      padding: 25px;
+      border-radius: 25px;
+      margin: 30px auto;
+      max-width: 480px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(6px);
+      font-size: 1.18em;
+      color: #555;
+      font-weight: 600;
+      font-style: italic;
+      letter-spacing: 0.02em;
+    }
+
+    .profile {
+      background: rgba(255, 255, 255, 0.88);
+      border: 2px dashed #d81e5b;
+      padding: 25px;
+      margin: 40px auto;
+      max-width: 700px;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      text-align: left;
+      font-size: 1.05em;
+    }
+
+    .profile h2 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      font-size: 2em;
+      color: #d81e5b;
+      margin-bottom: 20px;
+    }
+
+    .profile p {
+      margin-bottom: 15px;
+      line-height: 1.8em;
+      text-align: justify;
+      padding: 0 15px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin: 12px;
+      padding: 14px 22px;
+      background-color: #ff69b4;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 14px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.22);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1em;
+      letter-spacing: 0.04em;
+    }
+
+    a.button:hover {
+      background-color: #d81e5b;
+      transform: scale(1.07);
+    }
+
+    .float-cat {
+      position: absolute;
+      width: 50px;
+      opacity: 0.3;
+      animation: floatCat 12s infinite ease-in-out;
+    }
+
+    @keyframes floatCat {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-100px) rotate(15deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Halo, Namaku Kuroo!</h1>
+  <img class="Kuroo-img" src="https://cdn.pixabay.com/photo/2020/02/02/15/06/cat-4817250_1280.jpg" alt="Kuroo si Kucing" />
+
+  <div class="box">
+    <p>Aku bukan cuma kucing biasa. Aku perempuan, manja, pintar, dan princess di rumahku!</p>
+    <p><strong>Kalau aku nyasar, atau kamu pengen jadi fans no.1 aku...</strong></p>
+    <a class="button" href="https://wa.me/6281615245772" target="_blank">Hubungi Hooman-ku</a>
+    <a class="button" href="https://maps.app.goo.gl/TqkYWjYAwEFnnfh96?g_st=ac" target="_blank">Antar Aku Pulang</a>
+  </div>
+
+  <div class="profile">
+    <h2>Tentang Kuroo??</h2>
+    <p>Kuroo adalah kucing yang aktif dan ekspresif. Namanya terinspirasi dari Kuroo Tetsurou, kapten tim Nekoma dalam <em>Haikyuu!!</em>, dan seperti tokoh tersebut, Kuroo juga punya sifat percaya diri dan suka berinteraksi.</p>
+    <p>Ia sering mencari perhatian, suka bermain, dan tak jarang mengajak Kenma untuk ikut beraktivitas meski responsnya dingin. Tapi itulah yang membuat hubungan mereka menarik, Kuroo tampak sangat menyayangi Kenma dan terus mencoba mendekat, menciptakan dinamika yang lucu dan menggemaskan antara si pendiam dan si ramai.</p>
+    <p>Kuroo seolah menjadi penyeimbang alami bagi sifat kalem Kenma.</p>
+  </div>
+
+  <!-- Kucing mengambang -->
+  <img class="float-cat" src="https://cdn-icons-png.flaticon.com/512/616/616430.png" style="top:10%; left:5%;" alt="Floating Cat" />
+  <img class="float-cat" src="https://cdn-icons-png.flaticon.com/512/616/616430.png" style="top:40%; left:85%;" alt="Floating Cat" />
+  <img class="float-cat" src="https://cdn-icons-png.flaticon.com/512/616/616430.png" style="top:70%; left:10%;" alt="Floating Cat" />
+</body>
+</html>
