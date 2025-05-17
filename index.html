@@ -1,160 +1,215 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kuroo Si Kucing</title>
-  
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kucing Hilang - Kuroo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(135deg, #ffd6ec, #ffe4b5, #e0ffff);
-      color: #444;
-      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      color: #333;
       overflow-x: hidden;
-      line-height: 1.6;
-      letter-spacing: 0.03em;
+      position: relative;
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.8em;
+      font-family: 'Chewy', cursive;
+      font-size: 3.2em;
       margin-top: 40px;
-      color: #d81e5b;
-      letter-spacing: 0.06em;
-      font-weight: 700;
-      animation: fadeIn 2s ease-in-out forwards;
-      text-shadow: 1px 1px 3px rgba(216, 30, 91, 0.6);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
     }
 
     .Kuroo-img {
-      width: 220px;
-      height: 220px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      border: 6px dotted #ff69b4;
+      border: 6px dashed #fff;
       margin: 30px auto;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-      animation: float 3s ease-in-out infinite;
-      background-color: white;
-      object-fit: cover;
+      display: block;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-    }
-
-    .box {
-      background: rgba(255, 255, 255, 0.9);
-      border: 3px dashed #ff69b4;
+    .note-card {
+      background: #fffef0;
+      max-width: 600px;
+      margin: 30px auto;
       padding: 25px;
-      border-radius: 25px;
-      margin: 30px auto;
-      max-width: 480px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
-      backdrop-filter: blur(6px);
-      font-size: 1.18em;
-      color: #555;
-      font-weight: 600;
-      font-style: italic;
-      letter-spacing: 0.02em;
+      border-radius: 20px;
+      box-shadow: 4px 6px 25px rgba(0,0,0,0.15);
+      position: relative;
+      transform: rotate(-1.5deg);
+      font-size: 1.1em;
+    }
+
+    .note-card::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      width: 60px;
+      height: 20px;
+      background: #ff69b4;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .button-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 65px;
+      height: 65px;
+      margin: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      border: 2px solid white;
+    }
+
+    .button-icon img {
+      width: 32px;
+      height: 32px;
+      filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.4));
+      transition: transform 0.3s ease;
+    }
+
+    .button-icon:hover img {
+      transform: scale(1.2);
+    }
+
+    .button-icon:hover {
+      transform: scale(1.15);
+    }
+
+    .button-icon.whatsapp {
+      background-color: #a6e9a6;
+    }
+
+    .button-icon.maps {
+      background-color: #f6aea8;
     }
 
     .profile {
-      background: rgba(255, 255, 255, 0.88);
-      border: 2px dashed #d81e5b;
-      padding: 25px;
+      background: #fff;
+      max-width: 650px;
       margin: 40px auto;
-      max-width: 700px;
+      padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      text-align: left;
-      font-size: 1.05em;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
     .profile h2 {
-      font-family: 'Playfair Display', serif;
-      text-align: center;
+      font-family: 'Chewy', cursive;
+      color: #ff69b4;
       font-size: 2em;
-      color: #d81e5b;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      text-align: center;
     }
 
     .profile p {
-      margin-bottom: 15px;
-      line-height: 1.8em;
+      line-height: 1.6em;
       text-align: justify;
-      padding: 0 15px;
+      font-size: 1.05em;
     }
 
-    a.button {
-      display: inline-block;
-      margin: 12px;
-      padding: 14px 22px;
-      background-color: #ff69b4;
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 14px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.22);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1em;
-      letter-spacing: 0.04em;
-    }
-
-    a.button:hover {
-      background-color: #d81e5b;
-      transform: scale(1.07);
-    }
-
-    .float-cat {
+    .bg-icon {
       position: absolute;
-      width: 50px;
-      opacity: 0.3;
-      animation: floatCat 12s infinite ease-in-out;
+      opacity: 0.15;
+      z-index: 0;
     }
 
-    @keyframes floatCat {
-      0% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-100px) rotate(15deg); }
-      100% { transform: translateY(0) rotate(0deg); }
+    .paw {
+      width: 80px;
+      top: 100px;
+      left: 20px;
+    }
+
+    .star {
+      width: 50px;
+      top: 200px;
+      right: 30px;
+    }
+
+    .cloud {
+      width: 120px;
+      top: 27px;
+      right: 24px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.4em;
+      }
+
+      .note-card {
+        margin: 20px;
+        font-size: 1em;
+      }
+
+      .button-icon {
+        width: 55px;
+        height: 55px;
+      }
+
+      .button-icon img {
+        width: 26px;
+        height: 26px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Halo, Namaku Kuroo!</h1>
-  <img class="Kuroo-img" src="https://relevan.com.my/wp-content/uploads/2023/01/lloyd-henneman-mBRfYA0dYYE-unsplash-scaled.jpg" alt="Kuroo si Kucing" />
 
-  <div class="box">
-    <p>Meong... Aku Kuroo! Aku nyasar dan kangen rumah. Biasanya Aku makan enak, tidur nyaman, dan dimanjain tiap hari...</p>
-    <p>Sekarang Aku bingung.. dan sedikit takut:(<p>
-      <p>Tolong bantu aku pulang, ya..<p>
-    <p><strong>Kalau aku nyasar, atau kamu pengen jadi fans no.1 aku...</strong></p>
-    <a class="button" href="https://wa.me/6281615245772" target="_blank">Hubungi Hooman-ku</a>
-    <a class="button" href="https://maps.app.goo.gl/TqkYWjYAwEFnnfh96?g_st=ac" target="_blank">Antar Aku Pulang</a>
+  <!-- Background dekoratif -->
+  <img src="https://png.pngtree.com/png-clipart/20230623/original/pngtree-happy-cute-cat-vector-png-image_9205055.png" class="bg-icon paw" />
+  <img src="https://i.pinimg.com/originals/8a/d0/dd/8ad0dd639e5425b2b4ac34c72a66ab72.png" class="bg-icon star" />
+  <img src="https://png.pngtree.com/png-clipart/20230401/original/pngtree-cloud-line-icon-png-image_9016421.png" class="bg-icon cloud" />
+
+  <h1>Halo, Aku Kuroo!</h1>
+  <img class="Kuroo-img" src="https://relevan.com.my/wp-content/uploads/2023/01/lloyd-henneman-mBRfYA0dYYE-unsplash-scaled.jpg" alt="Kuroo si Kucing">
+
+  <div class="note-card">
+    <p>Meooong... Namaku Kuroo. Aku tersesat dan sedang mencari jalan pulang :(</p>
+    <p>Aku kangen makan enak, tempat tidur empuk, dan dielus setiap malam.</p>
+    <p>Kalau kamu melihatku, atau kamu kenal aku... bantu aku pulang, ya!</p>
+    <div class="buttons">
+      <a class="button-icon whatsapp" href="https://wa.me/6281615245772" title="Hubungi via WhatsApp" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      </a>
+      <a class="button-icon maps" href="https://maps.app.goo.gl/TqkYWjYAwEFnnfh96?g_st=ac" title="Lihat Lokasi di Google Maps" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Google Maps">
+      </a>
+      <div style="margin-top: 8px; color: #fff;">
+        <small style="margin-right: 40px;">WhatsApp</small>
+        <small>Lokasi</small>
+      </div>
+    </div>
   </div>
 
   <div class="profile">
-    <h2>Tentang Kuroo??</h2>
-    <p>Kuroo adalah kucing yang aktif dan ekspresif. Namanya terinspirasi dari Kuroo Tetsurou, kapten tim Nekoma dalam <em>Haikyuu!!</em>, dan seperti tokoh tersebut, Kuroo juga punya sifat percaya diri dan suka berinteraksi.</p>
-    <p>Ia sering mencari perhatian, suka bermain, dan tak jarang mengajak Kenma untuk ikut beraktivitas meski responsnya dingin. Tapi itulah yang membuat hubungan mereka menarik, Kuroo tampak sangat menyayangi Kenma dan terus mencoba mendekat, menciptakan dinamika yang lucu dan menggemaskan antara si pendiam dan si ramai.</p>
-    <p>Kuroo seolah menjadi penyeimbang alami bagi sifat kalem Kenma.</p>
+    <h2>Tentang Kuroo</h2>
+    <p>
+      Kuroo adalah kucing yang aktif dan ekspresif. Namanya terinspirasi dari Kuroo Tetsurou, kapten tim Nekoma dalam <em>Haikyuu!!</em>, dan seperti tokoh tersebut, Kuroo juga punya sifat percaya diri dan suka berinteraksi.
+    </p>
+    <p>
+      Ia sering mencari perhatian, suka bermain, dan tak jarang mengajak Kenma untuk ikut beraktivitas meski responsnya dingin. Tapi itulah yang membuat hubungan mereka menarik, Kuroo tampak sangat menyayangi Kenma dan terus mencoba mendekat, menciptakan dinamika yang lucu dan menggemaskan antara si pendiam dan si ramai.
+    </p>
+ <p>Kuroo seolah menjadi penyeimbang alami bagi sifat kalem Kenma.</p>
   </div>
 
-  <!-- Kucing mengambang -->
-  <img class="float-cat" src="https://cdn-icons-png.flaticon.com/512/616/616430.png" style="top:10%; left:5%;" alt="Floating Cat" />
-  <img class="float-cat" src="https://cdn-icons-png.flaticon.com/512/616/616430.png" style="top:40%; left:85%;" alt="Floating Cat" />
-  <img class="float-cat" src="https://cdn-icons-png.flaticon.com/512/616/616430.png" style="top:70%; left:10%;" alt="Floating Cat" />
 </body>
 </html>
