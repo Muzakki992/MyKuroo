@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kucing Hilang - Kuroo</title>
   <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -14,6 +14,14 @@
       color: #333;
       overflow-x: hidden;
       position: relative;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
 
     h1 {
@@ -25,7 +33,7 @@
       text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
     }
 
-    .Kuroo-img {
+    .kuroo-img {
       width: 200px;
       height: 200px;
       border-radius: 50%;
@@ -33,6 +41,32 @@
       margin: 30px auto;
       display: block;
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      animation: bounce 4s infinite ease-in-out;
+      object-fit: cover;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .bubble {
+      position: absolute;
+      top: 230px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fffef0;
+      padding: 10px 20px;
+      border-radius: 25px;
+      box-shadow: 2px 4px 12px rgba(0,0,0,0.2);
+      font-size: 1.2em;
+      font-family: 'Chewy', cursive;
+      opacity: 0;
+      transition: all 0.6s ease;
     }
 
     .note-card {
@@ -169,6 +203,11 @@
         width: 26px;
         height: 26px;
       }
+
+      .bubble {
+        font-size: 1em;
+        padding: 6px 16px;
+      }
     }
   </style>
 </head>
@@ -180,17 +219,18 @@
   <img src="https://png.pngtree.com/png-clipart/20230401/original/pngtree-cloud-line-icon-png-image_9016421.png" class="bg-icon cloud" />
 
   <h1>Halo, Aku Kuroo!</h1>
-  <img class="Kuroo-img" src="https://relevan.com.my/wp-content/uploads/2023/01/lloyd-henneman-mBRfYA0dYYE-unsplash-scaled.jpg" alt="Kuroo si Kucing">
+  <img class="kuroo-img" src="https://relevan.com.my/wp-content/uploads/2023/01/lloyd-henneman-mBRfYA0dYYE-unsplash-scaled.jpg" alt="Kuroo si Kucing">
+  <div class="bubble" id="bubble">Meow~</div>
 
   <div class="note-card">
     <p>Meooong... Namaku Kuroo. Aku tersesat dan sedang mencari jalan pulang :(</p>
     <p>Aku kangen makan enak, tempat tidur empuk, dan dielus setiap malam.</p>
     <p>Kalau kamu melihatku, atau kamu kenal aku... bantu aku pulang, ya!</p>
     <div class="buttons">
-      <a class="button-icon whatsapp" href="https://wa.me/6281615245772" title="Hubungi via WhatsApp" target="_blank">
+      <a class="button-icon whatsapp" href="https://wa.me/6281615245772" title="Hubungi via WhatsApp" target="_blank" onclick="playClick()">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
       </a>
-      <a class="button-icon maps" href="https://maps.app.goo.gl/TqkYWjYAwEFnnfh96?g_st=ac" title="Lihat Lokasi di Google Maps" target="_blank">
+      <a class="button-icon maps" href="https://maps.app.goo.gl/TqkYWjYAwEFnnfh96?g_st=ac" title="Lihat Lokasi di Google Maps" target="_blank" onclick="playClick()">
         <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Google Maps">
       </a>
       <div style="margin-top: 8px; color: #fff;">
@@ -203,13 +243,43 @@
   <div class="profile">
     <h2>Tentang Kuroo</h2>
     <p>
-      Kuroo adalah kucing yang aktif dan ekspresif. Namanya terinspirasi dari Kuroo Tetsurou, kapten tim Nekoma dalam <em>Haikyuu!!</em>, dan seperti tokoh tersebut, Kuroo juga punya sifat percaya diri dan suka berinteraksi.
+      Kuroo adalah kucing betina yang energik dan penuh rasa ingin tahu. Ia dinamai dari tokoh Tetsurō Kuroo di anime <em>Haikyuu!!</em>. Seperti tokoh itu, dia cerdas, penuh semangat, dan suka berinteraksi.
     </p>
     <p>
-      Ia sering mencari perhatian, suka bermain, dan tak jarang mengajak Kenma untuk ikut beraktivitas meski responsnya dingin. Tapi itulah yang membuat hubungan mereka menarik, Kuroo tampak sangat menyayangi Kenma dan terus mencoba mendekat, menciptakan dinamika yang lucu dan menggemaskan antara si pendiam dan si ramai.
+      Ia suka bermain dan menjelajah, tapi dia juga sangat setia dan penyayang terhadap teman-temannya, terutama Kenma.
     </p>
- <p>Kuroo seolah menjadi penyeimbang alami bagi sifat kalem Kenma.</p>
   </div>
 
+  <!-- Audio -->
+  <audio id="meow-sound" src="C:\Users\ASUS A455LF\Downloads\WhatsApp Audio 2025-05-17 at 14.28.48.mpeg" preload="auto"></audio>
+  <audio id="click-sound" src="C:\Users\ASUS A455LF\Downloads\WhatsApp Audio 2025-05-17 at 14.23.53.mpeg" preload="auto"></audio>
+  <audio id="bg-music" src="https://cdn.pixabay.com/audio/2023/03/01/audio_bf90099b6d.mp3" preload="auto" loop></audio>
+
+  <script>
+    const bubble = document.getElementById('bubble');
+    const meowSound = document.getElementById('meow-sound');
+    const clickSound = document.getElementById('click-sound');
+    const bgMusic = document.getElementById('bg-music');
+
+    function playClick() {
+      clickSound.currentTime = 0;
+      clickSound.play();
+    }
+
+    document.addEventListener('click', () => {
+      bgMusic.play().catch(() => {});
+    }, { once: true });
+
+    setInterval(() => {
+      bubble.style.opacity = '1';
+      bubble.style.transform = 'translateY(-10px)';
+      meowSound.currentTime = 0;
+      meowSound.play();
+      setTimeout(() => {
+        bubble.style.opacity = '0';
+        bubble.style.transform = 'translateY(0)';
+      }, 2000);
+    }, 6000);
+  </script>
 </body>
 </html>
